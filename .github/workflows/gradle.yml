@@ -17,6 +17,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+        java-package: jdk
+        architecture: x64
+        server-id: github
+        server-username: GITHUB_ACTOR
+        server-password: GITHUB_TOKEN
 
     - name: Build with Gradle
-      run: chmod +x ./gradlew && ./gradlew build --no-daemon
+      run: ./gradlew build --no-daemon
